@@ -10,11 +10,14 @@
 
 <body>
     <script src="remove-repeat.js"></script>
+    <script src="sort.js"></script>
     <script>
         var arr = [12, 43, 54, 65, 67, 78, 98, 90, 12, 23, 34, 43, 65, 78];
         document.write('去重前的arr数组：'+arr); 
         arr = unque(arr);
         document.write('去重后的arr数组：'+arr);
+        bubbleSort(arr);
+        document.write('排序后的arr数组：'+arr);        
     </script>
 </body>
 
