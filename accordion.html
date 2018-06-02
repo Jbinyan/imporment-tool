@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .accordion>.title {
+            padding: 6px;
+            border: 1px solid #aaa;
+            background: #eee;
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .accordion>.content {
+            padding: 6px;
+            border: 1px solid #aaa;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>动画实现手风琴组件</h1>
+    <div class="accordion">
+        <div class="title" data-toggle="title">
+            西游记简介
+        </div>
+        <div class="content">
+            一个和尚和四个动物的故事
+        </div>
+        <div class="title" data-toggle="title">
+            水浒传简介
+        </div>
+        <div class="content">
+            105个男人和3个女人的故事
+        </div>
+        <div class="title" data-toggle="title">
+            红楼梦简介
+        </div>
+        <div class="content">
+            一个男人和一堆女人的故事
+        </div>
+        <div class="title" data-toggle="title">
+            三国演义简介
+        </div>
+        <div class="content">
+            三个国家互相抢地盘的故事
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        $(".accordion>.content").slideUp().first().slideDown();
+        $(".accordion").on(
+            "click", "[data-toggle='title']",
+            function () {
+                $(this).siblings(".content").slideUp();
+                $(this).next().slideDown();
+            });
+    </script>
+</body>
+
+</html>
